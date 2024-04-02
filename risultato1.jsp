@@ -13,6 +13,7 @@
 ArrayList<libro> lista= (ArrayList)request.getAttribute("lista");
 String actionUrl = "prenota";
 String actionUrl1 = "storico";
+String actionUrl2 = "pendenze";
 if (lista == null){
 	out.print("E' null");
 }
@@ -37,8 +38,12 @@ out.print("<hr>");
 }
 out.print("<form action='" + actionUrl1 + "' method='post'>");
 out.print("<input type='submit' value='Visualizza storico'>");
-
-
+out.print("</form>");
+out.print("<hr>");
+out.print("<hr>");
+out.print("<form action='" + actionUrl2 + "' method='post'>");
+out.print("<input type='submit' value='Visualizza libri da resituire'>");
+out.print("</form>");
 	
 
 
