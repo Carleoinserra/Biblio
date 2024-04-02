@@ -65,14 +65,14 @@ public class registra extends HttpServlet {
 	            // Iterazione sui risultati e lettura dei dati
 	            while (rs.next()) {
 	                int id = rs.getInt("idutenti");
-	                String titolo = rs.getString("mail");
+	                String utente = rs.getString("mail");
 	                
 	                
 	                // Creazione di un nuovo oggetto Prodotto e aggiunta alla lista
 	                utente l1 = new utente();
 	                
 	               l1.setId(id);
-	               l1.setMail(mail);
+	               l1.setMail(utente);
 	               
 	               listaUtenti.add(l1);
 	            }
@@ -87,7 +87,7 @@ public class registra extends HttpServlet {
 	        }
         boolean ok = true;
         for (int i = 0; i < listaUtenti.size(); i++) { 
-        if (listaUtenti.get(i).getMail() == mail) {
+        	System.out.println(listaUtenti.get(i).getMail());      if (listaUtenti.get(i).getMail() == mail) {
            ok = false;
         }}
         if (ok == true) {
